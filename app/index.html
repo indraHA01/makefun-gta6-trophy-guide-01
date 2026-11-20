@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Field Manual — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 GTA VI PlayStation 5 trophies: official names, descriptions and grades, a roadmap to the platinum, missable flags, and a cited field brief for every trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="sunset">
+  <div class="sunset-band" aria-hidden="true"></div>
+  <div class="masthead">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline field manual</p>
+    <h1>Leonida Field Manual</h1>
+    <p class="subtitle">Every trophy. Every brief. One road to the platinum.</p>
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-numbers"><span id="earnedCount">0</span><span class="of"> / 55 earned</span></div>
+      <div class="progress-bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
+      <p class="progress-detail" id="progressDetail">1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze &middot; 28 hidden &middot; 0 online</p>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <button type="button" data-view="guide" class="tab active" id="tab-guide">Guide &amp; Tracker</button>
+    <button type="button" data-view="roadmap" class="tab" id="tab-roadmap">Roadmap to Platinum</button>
+    <button type="button" data-view="missables" class="tab" id="tab-missables">Missables</button>
+    <button type="button" data-view="settings" class="tab" id="tab-settings">Settings &amp; Save</button>
+  </nav>
+</header>
+
+<main id="main">
+  <section id="view-guide" class="view active" aria-label="Trophy guide and tracker">
+    <div class="toolbar">
+      <label class="search">Search
+        <input id="search" type="search" placeholder="Trophy name or description…" autocomplete="off">
+      </label>
+      <label class="grade-filter">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="earned-filter">Show
+        <select id="earnedFilter">
+          <option value="all">All trophies</option>
+          <option value="earned">Earned only</option>
+          <option value="unearned">Not yet earned</option>
+        </select>
+      </label>
+      <label class="spoiler-toggle"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+    </div>
+    <div class="chips" id="kindChips" role="group" aria-label="Filter by kind"></div>
+    <p class="result-count" id="resultCount"></p>
+    <ol class="trophy-list" id="trophyList"></ol>
+    <p class="empty" id="emptyState" hidden>No trophies match these filters. Try clearing the search or choosing another kind.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" aria-label="Roadmap to the platinum" hidden>
+    <p class="lede">The road to <strong>Vice Got a Price!</strong> in eight stages, built from the official trophy descriptions. Story first, then side characters, activities, collectibles and crime — the platinum pops last.</p>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <section id="view-missables" class="view" aria-label="Missable trophies" hidden>
+    <p class="lede">GTA VI has <strong>no mission replay</strong> and no New Game Plus, so save discipline matters. The good news: only <strong>one trophy can be missed</strong>.</p>
+    <ol class="trophy-list" id="missableList"></ol>
+    <aside class="save-discipline">
+      <h2>Save discipline</h2>
+      <ul>
+        <li>Keep a manual save at the start of every chapter.</li>
+        <li>Keep one more manual save before the final mission.</li>
+        <li>Do Lucia&rsquo;s balcony meditation in Chapter 1 before the chapter ends.</li>
+        <li>Cheats disable trophies — play clean until the platinum pops.</li>
+      </ul>
+      <p class="source-line">Source: <a href="https://outputlag.com/guides/gta-6-trophy-list/">Output Lag — GTA 6 trophy list</a> (no mission replay; Chapter 1 meditation missable) and <a href="https://sixshore.com/gta-6/guides/trophies-and-achievements/">Sixshore — GTA 6 trophy list, missables and roadmap</a>.</p>
+    </aside>
+  </section>
+
+  <section id="view-settings" class="view" aria-label="Settings and save data" hidden>
+    <h2>Your save</h2>
+    <p>Progress lives in this browser only (localStorage). Export it to a file to back it up or move it to another machine, and import it back here.</p>
+    <div class="save-actions">
+      <button type="button" id="exportBtn">Export progress (.json)</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button type="button" id="resetBtn" class="danger">Reset all progress</button>
+    </div>
+    <p class="save-status" id="saveStatus" role="status"></p>
+    <h2>Spoilers</h2>
+    <p><label class="spoiler-toggle"><input id="spoilerToggle2" type="checkbox"> Hide story spoilers — story trophy names and descriptions stay hidden until you earn them</label></p>
+    <h2>About this guide</h2>
+    <p>Names, descriptions, grades and PSN counts are the official list as published on <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a> and <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles</a>. Every field brief is written in our own words and names its sources beside it; where a place or step has not been checked in the game, the brief says so instead of inventing it. No Rockstar logo or official artwork is used — the look is our own. The app makes no network request: it works with the network off.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Field Manual — an unofficial, fan-made guide. Grand Theft Auto and GTA are trademarks of Rockstar Games / Take-Two Interactive. This guide is not affiliated with or endorsed by Rockstar Games.</p>
+  <p>Sources: <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a> &middot; <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles</a> &middot; <a href="https://sixshore.com/gta-6/guides/trophies-and-achievements/">Sixshore</a> &middot; <a href="https://outputlag.com/guides/gta-6-trophy-list/">Output Lag</a> &middot; <a href="https://howtovideogame.com/gta-6-trophies/">HowToVideoGame</a></p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
